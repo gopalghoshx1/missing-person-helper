@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Persons Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Missing Persons Database</h1>
+    </header>
+
+    <main>
+         <!-- Flash messages section -->
+         {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+           <div id="flash-messages">
+             {% for category, message in messages %}
+               <div class="flash-message {{ category }}">{{ message }}</div>
+             {% endfor %}
+           </div>
+         {% endif %}
+       {% endwith %}
+        
+
+        <section id="findPerson">
+            <h2>Find a Missing Person</h2>
+            <form action="/find" method="POST" id="findPersonForm">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                <label for="date">Date:</label>
+                <!-- Replace the date input with a date range input -->
+                <input type="date" id="startDate" name="startDate" required>
+                <label for="endDate">to</label>
+                <input type="date" id="endDate" name="endDate" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="searchResults">
+                <!-- Search results will be displayed here -->
+            </div>
+        </section>
+
+        <section id="uploadPhoto">
+            <h2>Upload Photo of a Missing Person</h2>
+            <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="upload">Upload Photo:</label>
+                <input type="file" id="upload" name="upload" accept="image/*" required>
+                <label for="lastSeenLocation">Last Seen Location:</label>
+                <input type="text" id="lastSeenLocation" name="lastSeenLocation" required>
+                <label for="lastSeenDate">Last Seen Date:</label>
+                <input type="date" id="lastSeenDate" name="lastSeenDate" required>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Missing Persons Database</p>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Search Results</h1>
+    </header>
+
+    <main>
+        <section id="searchResults">
+            <!-- Search results will be displayed here -->
+            {% if results %}
+            <ul>
+                {% for person in results %}
+                    <li class="person">
+                        <h2>{{ person.last_seen_location }}</h2>
+                        <p>Last Seen Date: {{ person.last_seen_date }}</p>
+                        <img src="{{ url_for('static', filename=person.file_path) }}" alt="Image of {{ person.filename }}">
+                    </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p>No results found.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Missing Persons Database</p>
+    </footer>
+
+
+</body>
+</html>

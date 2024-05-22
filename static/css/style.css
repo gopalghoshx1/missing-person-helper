@@ -1,0 +1,124 @@
+/* Reset styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and footer styles */
+header, footer {
+    background-color: #50b3a2; /* Updated color */
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Main content styles */
+main {
+    margin-top: 20px;
+    padding: 0 20px; /* Added padding */
+}
+
+/* Section styles */
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px; /* Updated border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1, h2 {
+    margin: 0;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="date"],
+input[type="file"],
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button styles */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Search results styles */
+#searchResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Updated grid */
+    grid-gap: 20px;
+}
+
+/* Person styles */
+.person {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px; /* Updated border radius */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.person:hover {
+    transform: translateY(-5px);
+}
+
+.person img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer styles */
+footer {
+    background-color: #50b3a2; /* Updated color */
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Flash messages styles */
+#flash-messages {
+    margin: 20px 0;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #030303;
+}
+
+.flash-message.success {
+    background-color: #0bff03;
+}
+
+.flash-message.error {
+    background-color: #f00;
+}
